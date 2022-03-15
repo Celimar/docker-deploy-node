@@ -1,0 +1,16 @@
+sudo: requisred 
+services: 
+  - doker
+
+script:
+  - docker build -t celimar2/node .
+  - dcoker images celimar2/node 
+
+before_deploy:
+  - docker login -u celimar2@gmail.com  -p $Inhonho99
+
+deploy;
+  provider: script
+  script: docker push celimar2/node
+  on:
+    branch: master
